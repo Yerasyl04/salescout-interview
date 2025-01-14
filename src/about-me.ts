@@ -4,7 +4,7 @@ export const contactInfo = {
     email: 'yourmail@gmail.com', //erasyl_turysbek@mail.ru
     bio: '' //
 Dear AutoData Hr,
-My name is Erasyl, and I am a 4th-year student at KBTU, majoring in Information Systems.
+My name is Yerassyl, and I am a 4th-year student at KBTU, majoring in Information Systems.
 As part of an academic project, I led a startup where I worked as a frontend developer and designer.
 I have completed several courses, including Golang Development, Web Development, UI/UX Design, JavaScript and React,
 as well as "Technological Entrepreneurship and Startups" and Power BI. Additionally,
