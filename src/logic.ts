@@ -6,8 +6,10 @@ type Product = {
 };
  
 function filterAndSortProducts(products: Product[]): Product[] {
-    // Your code goes here
-    return [] 
+    return Array.from(
+        products.reduce((map, p) => map.set(p.name, map.get(p.name)?.price > p.price ? p : map.get(p.name) || p), new Map())
+        .values()
+    ).sort((a, b) => a.price - b.price);
 }
 
 module.exports = { filterAndSortProducts }
