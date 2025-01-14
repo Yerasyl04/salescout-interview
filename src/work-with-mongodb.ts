@@ -25,7 +25,7 @@ async function manageUsers(): Promise<DuplicatedUsers[]> {
         useUnifiedTopology: true,
     });
 
-    await User.collection.drop().catch(() => {}); // Drop existing collection if it exists
+    await User.collection.drop().catch(() => {}); 
 
     await User.insertMany([
         { name: 'Alice', email: 'alice@example.com' },
