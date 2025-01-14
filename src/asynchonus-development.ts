@@ -17,24 +17,13 @@ type RequestsResult = {
 }
 
 async function fetchAll(urls: string[]): Promise<RequestsResult[]> {
-    const promises = urls.map(async (url) => {
-        try {
-            const response = await fetch(url);
-            const data = await response.json();
-            return {
-                data,
-                status: response.status
-            };
-        } catch (error) {
-            return {
-                data: error.message,
-                status: 500
-            };
-        }
-    });
-
-    const results = await Promise.all(promises);
-    return results;
+    const promises = urls.map(url => 
+        fetch(url)
+            .then(response => response.json())
+            .then(data => ({ data, status: response.status }))
+            .catch(() => ({ data: null, status: 500 }))
+    );
+    return Promise.all(promises);
 }
 
 module.exports = { fetchAll };
